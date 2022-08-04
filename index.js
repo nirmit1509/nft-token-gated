@@ -121,16 +121,16 @@ connectToMoralis();
 //   '0x146bbc094b3e065aa6b787fe0e204a9aa3b362e3',
 // );
 
-getAllNFTsForMultipleContracts(
-  'mumbai',
-  '0xf2b3Bc6Dc2923ebcBBb702C952c62dfC322Ad014',
-  [
-    '0x146bbc094b3e065aa6b787fe0e204a9aa3b362e3',
-    '0xe25f9ce2bb2d8bd74263392685774c419e973a3a',
-    '0x4b0c9f80fd9c405eba6db25a30da0e871044fcd5',
-    '0xFcb67e6FAA7a24051D506e9072983387a6Ca6364',
-  ],
-);
+// getAllNFTsForMultipleContracts(
+//   'mumbai',
+//   '0xf2b3Bc6Dc2923ebcBBb702C952c62dfC322Ad014',
+//   [
+//     '0x146bbc094b3e065aa6b787fe0e204a9aa3b362e3',
+//     '0xe25f9ce2bb2d8bd74263392685774c419e973a3a',
+//     '0x4b0c9f80fd9c405eba6db25a30da0e871044fcd5',
+//     '0xFcb67e6FAA7a24051D506e9072983387a6Ca6364',
+//   ],
+// );
 
 /* User B */
 // getAllNFTs('mumbai', '0x3DdE79c051C37547FcB0664F3e8fAD5621a7169a');
@@ -140,11 +140,3 @@ getAllNFTsForMultipleContracts(
 //   '0x3DdE79c051C37547FcB0664F3e8fAD5621a7169a',
 //   '0xFcb67e6FAA7a24051D506e9072983387a6Ca6364',
 // );
-
-/*
- * 1. all nfts
- * 2. nfts of a single contract - EOA + contract address
- * 3. nfts of a single contract - EOA + contract address + token ids
- * 4. nfts of multiple contracts - EOA + contract addresses
- * 5. nfts of multiple contracts - EOA + (contract addresses + token ids)
- */
