@@ -56,15 +56,16 @@ const getAllNFTsForContract = async (
     : {};
   let nftList = [];
   allNFTs.result.forEach((element) => {
-    nftList.push({
-      token_id: parseInt(element.token_id),
-      amount: parseInt(element.amount),
-      token_metadata: JSON.parse(element.metadata),
-    });
+    (token_ids === null || token_ids.includes(parseInt(element.token_id))) &&
+      nftList.push({
+        token_id: parseInt(element.token_id),
+        amount: parseInt(element.amount),
+        token_metadata: JSON.parse(element.metadata),
+      });
   });
   result.contract_address = contract_address;
   result.chain = chain;
-  result.count = allNFTs.total;
+  result.count = nftList.length;
   result.status = nftList.length > 0;
   result.data = nftList;
   console.log(result);
@@ -100,7 +101,7 @@ const getAllNFTsForMultipleContracts = async (
       });
       obj.contract_address = contract;
       obj.chain = chain;
-      obj.count = allNFTs.total;
+      obj.count = nftList.length;
       obj.status = nftList.length > 0;
       obj.data = nftList;
       // console.log(obj);
@@ -119,6 +120,13 @@ connectToMoralis();
 //   'mumbai',
 //   '0xf2b3Bc6Dc2923ebcBBb702C952c62dfC322Ad014',
 //   '0x146bbc094b3e065aa6b787fe0e204a9aa3b362e3',
+// );
+
+// getAllNFTsForContract(
+//   'mumbai',
+//   '0xf2b3Bc6Dc2923ebcBBb702C952c62dfC322Ad014',
+//   '0x146bbc094b3e065aa6b787fe0e204a9aa3b362e3',
+//   [764, 109, 118],
 // );
 
 // getAllNFTsForMultipleContracts(
